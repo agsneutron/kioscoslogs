@@ -10,9 +10,9 @@ from django.utils import timezone
 
 
 class Log(models.Model):
-    origen = models.CharField(verbose_name="Nombre de la Dependencia", null=False, blank=False, max_length=20)
-    accion = models.CharField(verbose_name="Nombre Corto de la Dependencia", null=True, blank=True, max_length=500)
-    date = models.DateTimeField(verbose_name="Fecha de pago", null=True, default=timezone.now)
+    origen = models.CharField(verbose_name="Kiosco origen", null=False, blank=False, max_length=20)
+    accion = models.CharField(verbose_name="Acción realizada", null=True, blank=True, max_length=500)
+    date = models.DateTimeField(verbose_name="Fecha del evento", null=True, default=timezone.now)
 
     class Meta:
         verbose_name = "Log"
