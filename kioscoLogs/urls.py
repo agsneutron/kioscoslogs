@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+import logs
+from logs import urls
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # Rutas para el funcionamiento de Oauth.
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+
+    url(r'^logs/', include(logs.urls)),
 ]

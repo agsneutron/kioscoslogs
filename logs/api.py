@@ -3,6 +3,7 @@
 # Librerías propias del proyecto.
 import json
 import urllib
+from lib.utilities import Utilities
 
 from xml.etree import ElementTree as ET
 
@@ -38,12 +39,12 @@ from django.utils.decorators import method_decorator
 
 
 @method_decorator(csrf_exempt, name='dispatch')
-class GenerarOrdenInterna(ListView):
-    def post(self, request, *args, **kwargs):
+class GenerarLog(ListView):
+    def get(self, request, *args, **kwargs):
 
         # Obligatorios
-        origen_p = request.POST.get("origen")
-        accion_p = request.POST.get("accion")
+        origen_p = request.GET.get("origen")
+        accion_p = request.GET.get("accion")
 
 
         dia_actual = datetime.today()
@@ -59,8 +60,7 @@ class GenerarOrdenInterna(ListView):
         log_kiosco.save()
 
 
-        print "ID is: " + str(orden_de_pago.id)
-        print "Folio is: " + str(orden_de_pago.folio)
+        print "ID is: " + str(log_kiosco.id)
 
         return HttpResponse(Utilities.json_to_dumps({
             "estatus": "True",
