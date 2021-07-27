@@ -137,11 +137,13 @@ USE_TZ = False
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = (
+CORS_ORIGIN_WHITELIST = [
     'https://kioscos.fusion-ti.com',
-    'http://cpanel.server.edicto.com.mx/',
-    'https://127.0.0.1:8000',
-)
+    'http://cpanel.server.edicto.com.mx',
+    'http://localhost:8000',
+    'http://127.0.0.1:5000'
+]
+
 
 
 # Static files (CSS, JavaScript, Images)
