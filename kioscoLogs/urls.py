@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 import logs
 from logs import urls
+import servicios
+from servicios import urls
 
 
 urlpatterns = [
@@ -25,4 +27,5 @@ urlpatterns = [
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 
     url(r'^logs/', include(logs.urls)),
+    url(r'^servicios/', include(servicios.urls)),
 ]

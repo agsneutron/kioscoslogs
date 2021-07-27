@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'tinymce',
     'django.contrib.humanize',
-    
+    'servicios',
     'logs',
 ]
 

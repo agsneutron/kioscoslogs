@@ -7,7 +7,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'kioscos_logs_db',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'alex2727',
         'HOST': '',
         'PORT': '',
     }
