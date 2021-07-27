@@ -19,7 +19,8 @@ import logs
 from logs import urls
 import servicios
 from servicios import urls
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,4 +29,4 @@ urlpatterns = [
 
     url(r'^logs/', include(logs.urls)),
     url(r'^servicios/', include(servicios.urls)),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

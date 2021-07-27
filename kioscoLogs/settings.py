@@ -138,6 +138,10 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
+# Media files (files uploaded via web app).
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
 
 # Setting utf as default encoding.
 import sys
