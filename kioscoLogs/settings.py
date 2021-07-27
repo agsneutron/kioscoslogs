@@ -134,6 +134,15 @@ USE_L10N = True
 USE_TZ = False
 
 
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+    'https://kioscos.fusion-ti.com',
+    'https://127.0.0.1:8000',
+)
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
