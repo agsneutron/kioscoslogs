@@ -57,8 +57,6 @@ class GetOpciones(ListView):
             response.append(opc)
 
         return HttpResponse(Utilities.json_to_dumps({
-            "estatus": "True",
-            "mensaje": "Se generó exitosamente la consulta",
             "data": response
 
         }), 'application/json; charset=utf-8')
