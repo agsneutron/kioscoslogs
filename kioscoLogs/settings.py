@@ -26,7 +26,22 @@ SECRET_KEY = 'v$u_7&ovjp^7$owbzdb$t15uo#+7n%!6s2@&3a&ozo02i7_+z6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
+
+
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_HTTPONLY = False
+SESSION_COOKIE_SECURE = False
+
+
+CORS_ORIGIN_WHITELIST = [
+    'https://kioscos.fusion-ti.com',
+    'http://cpanel.server.edicto.com.mx',
+    'http://localhost:8000',
+    'http://127.0.0.1:5000'
+]
+
 
 
 # Application definition
@@ -135,14 +150,6 @@ USE_TZ = False
 
 
 
-CORS_ORIGIN_ALLOW_ALL = True
-
-CORS_ORIGIN_WHITELIST = [
-    'https://kioscos.fusion-ti.com',
-    'http://cpanel.server.edicto.com.mx',
-    'http://localhost:8000',
-    'http://127.0.0.1:5000'
-]
 
 
 
