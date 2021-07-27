@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
 from django.forms.models import model_to_dict
-
+from django.conf import settings
 # Create your models here.
 from django.utils import timezone
 
@@ -56,6 +56,8 @@ class opcion(models.Model):
 
     def to_serializable_dict(self):
         result = model_to_dict(self)
+        result['imagen'] = settings.URL_WEB + '/media/' + str(self.imagen.name) if (self.imagen is not None and self.imagen != '') else ''
+        result['contenido'] = settings.URL_WEB + '/media/' + str(self.contenido.name) if (self.contenido is not None and self.contenido != '') else ''
         return result
 
 

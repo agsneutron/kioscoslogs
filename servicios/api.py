@@ -47,14 +47,7 @@ class GetOpciones(ListView):
 
         response =[]
         for opc in opcion_por_categoria:
-            opc = {
-                "titulo": str(opc.titulo),
-                "imagen": str(opc.imagen.name),
-                "ruta": str(opc.ruta),
-                "contenido": str(opc.contenido.name),
-            }
-
-            response.append(opc)
+            response.append(opc.to_serializable_dict())
 
         return HttpResponse(Utilities.json_to_dumps({
             "data": response
